@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 
 import '../../color_pallete.dart';
 import '../../routing/route.gr.dart';
@@ -20,7 +19,8 @@ class ProjectOverlay extends StatelessWidget {
     return InkWell(
       onTap: () => context.pushRoute(ProjectWrapperRoute(title: projectKey)),
       child: Container(
-        height: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 210 : 300,
+        // height: ResponsiveWrapper.of(context).isSmallerThan(TABLET) ? 210 : 300,
+        height: 300,
         width: 400,
         decoration: BoxDecoration(
           color: Colors.black.withOpacity(0.5),
@@ -35,7 +35,8 @@ class ProjectOverlay extends StatelessWidget {
             ),
             const Gap(8),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () =>
+                  context.pushRoute(ProjectWrapperRoute(title: projectKey)),
               style: ElevatedButton.styleFrom(
                 backgroundColor: ColorPalette.backgroundColor2,
                 elevation: 0.0,
